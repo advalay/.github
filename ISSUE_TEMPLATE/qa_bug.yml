@@ -1,0 +1,65 @@
+name: バグ報告（QA）
+description: 動作確認で見つけた不具合・使いにくさの報告。1つの不具合につき1つのIssue
+title: "[QA-NG] "
+labels: ["qa-bug"]
+body:
+  - type: input
+    id: request
+    attributes:
+      label: 元の検証依頼
+      description: 依頼Issueの番号（例 #120）と項目番号
+      placeholder: "#120 の項目3"
+    validations:
+      required: true
+  - type: dropdown
+    id: severity
+    attributes:
+      label: 重大度
+      description: 「好み」はこのIssueではなく、依頼Issueの結果報告に書いてください
+      options:
+        - "動かない（操作が完了しない・エラー・データが消える）"
+        - "使いにくい（完了はするが迷う・押しにくい・遅い）"
+    validations:
+      required: true
+  - type: textarea
+    id: env
+    attributes:
+      label: 環境
+      placeholder: iPhone 15 / iOS 18.6 / Safari
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: 再現手順
+      value: |
+        1.
+        2.
+        3.
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: 期待した動き
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: 実際の動き
+      description: エラー文が出ていればそのまま貼る
+    validations:
+      required: true
+  - type: textarea
+    id: media
+    attributes:
+      label: スクショ・動画
+      description: ここにドラッグ&ドロップ。大きい動画はDriveリンク
+    validations:
+      required: true
+  - type: input
+    id: repro
+    attributes:
+      label: 再現率
+      placeholder: 毎回 / 3回に1回 / 1回だけ

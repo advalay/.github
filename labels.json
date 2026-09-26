@@ -1,0 +1,6 @@
+[
+  {"name": "qa-request", "color": "0E8A16", "description": "検証依頼（担当者はこれを見る）"},
+  {"name": "qa-bug", "color": "D93F0B", "description": "動作確認で見つかった不具合（Codexが拾う）"},
+  {"name": "sev-動かない", "color": "B60205", "description": "操作が完了しない・エラー・データ消失"},
+  {"name": "sev-使いにくい", "color": "FBCA04", "description": "完了はするが迷う・押しにくい・遅い"}
+]

@@ -1,0 +1,57 @@
+name: 検証依頼（QA）
+description: 動作確認をお願いするときの依頼票。担当者はこの表に沿って確認し、結果をコメントで報告します
+title: "[QA] "
+labels: ["qa-request"]
+body:
+  - type: input
+    id: target
+    attributes:
+      label: 対象
+      description: 対象のPRやリリース（例 #123 / v1.4.0）
+    validations:
+      required: true
+  - type: textarea
+    id: summary
+    attributes:
+      label: 何が変わったか
+      description: 担当者が背景を掴めるように2〜3行で
+    validations:
+      required: true
+  - type: textarea
+    id: env
+    attributes:
+      label: 確認環境
+      value: |
+        - stg URL:
+        - テストアカウント:（ID / パスワードはSlack DMで別送）
+        - 対象端末: iPhone実機 / Android実機 / PC Chrome
+    validations:
+      required: true
+  - type: textarea
+    id: checklist
+    attributes:
+      label: 確認項目
+      description: 上から順に。1依頼10〜15項目まで。手順は操作単位で、期待結果は目で確認できる形で書く
+      value: |
+        | # | 手順 | 期待する結果 | 端末 |
+        |---|---|---|---|
+        | 1 |  |  | 全部 |
+        | 2 |  |  | iPhone |
+        | 3 |  |  | PC |
+    validations:
+      required: true
+  - type: textarea
+    id: edge
+    attributes:
+      label: 壊れやすいところ（あれば）
+      description: 境界値・戻る操作・回線切断・連打など、特に見てほしい点
+  - type: input
+    id: due
+    attributes:
+      label: 期限
+      placeholder: 2026-10-03
+  - type: markdown
+    attributes:
+      value: |
+        ---
+        担当者へ: 全項目を確認したら「結果報告」をコメントし、NGは「バグ報告（QA）」テンプレで1件1Issueにしてください。終わったらこのIssueをCloseしてください。
