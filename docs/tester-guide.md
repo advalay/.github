@@ -4,7 +4,8 @@
 
 ## 1. 依頼を開く
 
-- GitHubの「QA」ボード（Projects）に、確認してほしい依頼（`qa-request` ラベルのIssue）が並びます
+- 確認してほしい依頼は、この一覧に並びます（ブックマークしてください）
+  https://github.com/issues?q=org%3Aadvalay+is%3Aissue+is%3Aopen+label%3Aqa-request+sort%3Acreated-desc
 - 依頼Issueには「確認する環境」「テストアカウント」「確認項目の表」「期限」が書いてあります
 - 分からない点は依頼Issueにコメントで質問してください（Slackではなく、Issueに残す）
 
